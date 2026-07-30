@@ -3,3 +3,6 @@
 ## Daniel Camilo Mosquera Martinez
 Soy la mejor opcion para DOSW Company, porque tengo diferentes fortalezas en la rapida adquisicion de conocimiento, puedo comprender sistemas complejos en poco tiempo.
 
+![](HojaDeVidaCamiloOrtiz.jpg)
+## Cristian Camilo Ortiz Sanchez
+Soy el candidato ideal para DOSW Company, porque soy una persona que se esfuerza por resolver diferentes problemas y además porque aprendo rápidamente.

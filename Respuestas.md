@@ -22,4 +22,34 @@ Por ejemplo, si no quiero hacer un commit a medias, y necesito cambiar de rama, 
 para despues poder retomarlo en un futuro.
 
 # 6. ¿Qué diferencia hay entre HashMap y HashTable?
-Estos dos tienen varias diferencias
+Estos dos tienen varias diferencias, una de ellas es la sincronizacion, donde HashMap no esta sincronizado y Hashtable 
+si lo esta. Para valores Null, HashMap permite una clave unla y varios valores nulos, y Hashtable no lo permite. Y la 
+mayor diferencia es la base computacional que son diferentes algoritmos.
+
+# 7. ¿Qué ventajas tiene Collectors.toMap() frente a un bucle tradicional para llenar un mapa?
+**Collectors.toMap()** es declarativo por ser codigo con Streams, por lo que este solo describe que quieres hacer y no 
+el como hacerlo. Tambien tiene ventajas como la paralelizacion facil.
+
+# 8. Si usas List con objetos y aplicas stream().map(), ¿qué tipo de operación estás haciendo?
+Si usames estos dos, es un operacion intermedia de transformacion, que tiene las siguientes caracteristicas
+Transformacion uno a uno, e inmutabilidad del Origen, que es que la lista original no se modifica.
+
+# 9. ¿Qué hace stream().filter() y qué retorna?
+Tambien como la anterior es una operacion intermedia, que se usa para seleccionar elementos de un Stream basandose en
+una condicion. Y retorna un nuevo Stream que contiene unicamente los elementos que cumplieron la condicion. 
+
+# 10. Describe el paso a paso para crear una rama desde develop para una funcionalidad nueva.
+- Lo primero es **Actualizar tu rama base**, esto para evitar conflictos futuros. 
+- **Crear y cambiar la nueva rama**, usando el comando "checkout -b" para crear la rama.
+- **Subor la rama al remoto**, esto para que este en la nube directamente.
+- Trabajar en tu nueva rama
+
+# 11. ¿Cuál es la diferencia entre git branch y git checkout -b?
+La diferencia entre estas dos en la colocacion despues de la creacion de la rama. **Git branch** unicamente crea la rama
+y **git checkout -b** crea la rama y se mueve a ella, colocandonos en la nueva rama creada, es como un branch, y 
+un checkout hechos secuencialmente.
+
+# 12. ¿Por qué se recomienda usar ramas feature/ en lugar de trabajar directamente en main?
+Hya varios puntos por que son mejores, uno de ellos es la estabilidad, para que no se hagan un conflicto entre todas las
+modificaciones, es mejor que el main este estatico, y es el "producto final". Otra mejoria es el Aislamiento y colaboracion
+paralela. Ademas tenemos un control de los cambios por los commits y en un futuro los pulls request.

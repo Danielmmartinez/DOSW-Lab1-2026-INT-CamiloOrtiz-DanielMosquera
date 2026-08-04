@@ -1,15 +1,39 @@
 import java.util.List;
+import java.util.Scanner;
 import java.util.stream.Collectors;
 
 public class Reto1 {
 
 	public static void main(String[] args) {
 		
-		List<Estudiante> estudiantes = List.of(
-				new Estudiante("Camilo Ortiz", 18, "cristian.ortiz-s@mail.escuelaing.edu.co", 6),
-				new Estudiante("Daniel Mosquera", 19, "daniel.mmartinez@mail.escuelaing.edu.co", 6));
+		System.out.println("Ingrese los datos del primer estudiante: ");
+		Estudiante estudiante1 = generarEstudiante();
+
+		System.out.println("\nIngrese los datos del segundo estudiante: ");
+		Estudiante estudiante2 = generarEstudiante();
+
+		List<Estudiante> estudiantes = List.of(estudiante1, estudiante2);
 		
 		MensajeBienvenida.imprimirMensajeBienvenida(estudiantes);
+	}
+
+	private static Estudiante generarEstudiante() {
+
+		Scanner scanner = new Scanner(System.in);
+
+		System.out.print("\nIngresar el nombre: ");
+		String nombre = scanner.next();
+
+		System.out.print("Ingresar la edad: ");
+		int edad = scanner.nextInt();
+
+		System.out.print("Ingresar el correo: ");
+		String correo = scanner.next();
+
+		System.out.print("Ingresar el semestre: ");
+		int semestre = scanner.nextInt();
+
+		return new Estudiante(nombre, edad, correo, semestre);
 	}
 }
 
@@ -49,7 +73,7 @@ class MensajeBienvenida {
 	
 	public static void imprimirMensajeBienvenida(List<Estudiante> estudiantes) {
 		
-		System.out.println("¡Hola, bienvenidos! Somos la pareja conformada por");
+		System.out.println("\n¡Hola, bienvenidos! Somos la pareja conformada por");
 		
 		System.out.print(
 			estudiantes.stream()

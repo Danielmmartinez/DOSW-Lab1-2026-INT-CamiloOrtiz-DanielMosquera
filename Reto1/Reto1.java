@@ -22,7 +22,7 @@ public class Reto1 {
 		Scanner scanner = new Scanner(System.in);
 
 		System.out.print("\nIngresar el nombre: ");
-		String nombre = scanner.next();
+		String nombre = scanner.nextLine();
 
 		System.out.print("Ingresar la edad: ");
 		int edad = scanner.nextInt();

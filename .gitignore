@@ -1,6 +1,7 @@
 # Archivos de IntelliJ
 .idea/
 *.iml
+untitled/
 
 # Archivos compilados / Java
 out/

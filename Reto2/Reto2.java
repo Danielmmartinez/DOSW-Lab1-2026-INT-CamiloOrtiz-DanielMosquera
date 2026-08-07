@@ -10,14 +10,46 @@ public class Reto2 {
 
 		System.out.println("Lista 1:");
 		List<Integer> listaProcesada = leerDatos(scanner);
-		mostrarDatos(listaProcesada, "Lista 1");
 
 		System.out.println("Lista 2:");
 		List<Integer> listaProcesada2 = leerDatos(scanner);
-		mostrarDatos(listaProcesada2, "Lista 2");
 
+		Resultado resultado1 = procesarLista(listaProcesada);
+		Resultado resultado2 = procesarLista(listaProcesada2);
 
+		System.out.println("Lista 1 =>");
+		System.out.println(resultado1);
+
+		System.out.println("Lista 1 =>");
+		System.out.println(resultado2);
 	}
+
+static class Resultado{
+		private int maximo;
+		private int minimo;
+		private int cantidad;
+		private boolean multiploDeDos;
+		private boolean divisorDeDos;
+		private boolean esPar;
+
+		public Resultado(int maximo, int minimo, int cantidad, boolean multiploDeDos,
+						 boolean divisorDeDos, boolean esPar) {
+			this.maximo = maximo;
+			this.minimo = minimo;
+			this.cantidad = cantidad;
+			this.multiploDeDos = multiploDeDos;
+			this.divisorDeDos = divisorDeDos;
+			this.esPar = esPar;
+		}
+	public String toString() {
+		return "max:" + maximo +
+		" min:" + minimo +
+		" cant:" + cantidad +
+		"\n¿" + maximo + " múltiplo de 2? " + (multiploDeDos ? "Sí" : "No") +
+		"\n¿" + maximo + " divisor de 2? " + (divisorDeDos ? "Sí" : "No") +
+		"\n¿Cantidad (" + cantidad + ") es par? " + (esPar ? "Sí" : "No");
+	}
+}
 	public static List<Integer> leerDatos(Scanner scanner){
 		String lista = scanner.nextLine();
 		String[] datos = lista.split(",");
@@ -29,7 +61,7 @@ public class Reto2 {
 
 	}
 
-	public static void mostrarDatos(List<Integer> lista, String nombre) {
+	public static Resultado procesarLista(List<Integer> lista) {
 
 		int minimo = lista.stream()
 						  .min((a,b) -> Integer.compare(a,b))
@@ -40,19 +72,16 @@ public class Reto2 {
 		int maximo = lista.stream()
 						  .max((a, b) -> Integer.compare(a, b))
 						  .get();
-
-		System.out.println(
-				nombre + " => max:" + maximo +
-						" min:" + minimo +
-						" cant:" + cantidad
+		return new Resultado(
+				maximo,
+				minimo,
+				cantidad,
+				maximo % 2 == 0,
+				2 % maximo == 0,
+				cantidad % 2 == 0
 		);
 
-		System.out.println("  ¿" + maximo + " múltiplo de 2? " + multiploDeDos(maximo));
-		System.out.println("  ¿" + minimo + " divisor de 2? " + divisorDeDos(minimo));
-		System.out.println("  ¿Cantidad (" + cantidad + ") " + "es par? " + esPar(cantidad));
+
 	}
 
-	private static String multiploDeDos(Integer numero) { return numero % 2 == 0 ? "Sí" : "No"; }
-	private static String divisorDeDos(Integer numero) { return 2 % numero == 0 ? "Sí" : "No"; }
-	private static String esPar(Integer numero) {return numero % 2 == 0 ? "Sí" : "No"; }
 }

@@ -17,19 +17,19 @@
 ### Funcionamiento
 ![FuncionaReto3](EvidenciaReto3.png)
 ### Codigo
-![CodeReto3](EvidenciaReto3Code1.png)
+![CodeReto3](EvidenciaReto3code1.png)
 
 ## Reto 4
 ### Funcionamiento
 ![FuncionaReto4](EvidenciaReto4.png)
 ### Codigo
-![CodeReto4](EvidenciaReto4Code1.png)
+![CodeReto4](EvidenciaReto4code1.png)
 
 ## Reto 5
 ### Funcionamiento
 ![FuncionaReto5](EvidenciaReto5.png)
 ### Codigo
-![CodeReto5](EvidenciaReto5Code1.png)
+![CodeReto5](EvidenciaReto5code1.png)
 
 ## Reto 6
 ### Funcionamiento

@@ -16,6 +16,18 @@ public class Reto6 {
 	private static void ejecutarComando(String comando) {
 		
 		switch (comando) {
+			case "SALUDAR":
+				System.out.println("¡Saludos, viajero del Tiempo y del código! ");
+				break;
+			case "DESPEDIR":
+				System.out.println("Hasta la próxima compilación, viajero.");
+				break;
+			case "CANTAR":
+				System.out.println("La la la... compilando melodías en tiempo real. ");
+				break;
+			case "DANZAR":
+				System.out.println("Girando en modo fiesta. ");
+				break;
 			case "BROMEAR":
 				System.out.println("¿Por qué la RAM rompió con la CPU? Porque necesitaba espacio...");
 				break;

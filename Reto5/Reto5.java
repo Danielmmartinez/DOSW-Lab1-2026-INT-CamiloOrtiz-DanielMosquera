@@ -3,13 +3,17 @@ import java.util.Scanner;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Reto5 {
 	
 	public static void main(String[] args) {
-		System.out.println(almacenarEnTreeSet().toString());
-		System.out.println(almacenarEnHashSet().toString());
-		
+		Set<Integer> hashSet = almacenarEnHashSet();
+		Set<Integer> treeSet = almacenarEnTreeSet();
+		Set<Integer> arena = unirSets(hashSet, treeSet);
+
+		arena.forEach(n ->
+				System.out.println("Numero en arena: " + n));
 	}
 	
 	private static Set<Integer> almacenarEnHashSet() {
@@ -50,6 +54,12 @@ public class Reto5 {
 		return treeSet.stream()
 				      .filter(numero -> numero % 5 != 0)
 				      .collect(Collectors.toCollection(TreeSet::new));
+	}
+
+	private static Set<Integer> unirSets (Set<Integer> hashSet,
+										  Set<Integer> treeSet){
+		return Stream.concat(hashSet.stream(),treeSet.stream())
+				.collect(Collectors.toCollection(TreeSet::new));
 	}
 
 }

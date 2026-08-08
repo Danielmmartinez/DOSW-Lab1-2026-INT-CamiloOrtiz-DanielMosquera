@@ -7,12 +7,37 @@ public class Reto7 {
 
     public static void main(String[] args) {
 
-        List<Jugador> jugadores = List.of(new Jugador("Seong Gi-hun", 456, 160),
-            new Jugador("Kang Sae-byeok", 067, 80),
-            new Jugador("Cho Sang-woo", 218, 250));
+        List<Jugador> jugadores = List.of(
+                new Jugador("Seong Gi-hun", 456, 160),
+                new Jugador("Kang Sae-byeok", 67, 80),
+                new Jugador("Cho Sang-woo", 218, 250),
+                new Jugador("Ali Abdul", 199, 70)
+        );
 
-        segundaPrueba(jugadores);
-        
+        List<Jugador> sobrevivientes = primeraPrueba(jugadores);
+
+        segundaPrueba(sobrevivientes);
+    }
+    private static List<Jugador> primeraPrueba(List<Jugador> jugadores) {
+
+        System.out.println("Prueba 1 - Luz Roja Luz Verde:");
+
+        List<Jugador> jugadoresActualizados = jugadores.stream()
+                .map(jugador -> {
+
+                    if (jugador.getDeuda() > 170) {
+                        jugador.setEstado("ELIMINADO");
+                    }
+
+                    return jugador;
+                })
+                .collect(Collectors.toList());
+
+        ImprimirReto.imprimirJugadoresRonda(jugadoresActualizados);
+
+        return jugadoresActualizados.stream()
+                .filter(jugador -> jugador.getEstado().equals("ACTIVO"))
+                .collect(Collectors.toList());
     }
 
     private static List<Jugador> segundaPrueba(List<Jugador> jugadores) {
@@ -63,6 +88,8 @@ class Jugador {
     public void setEstado(String estado) {
         this.estado = estado;
     }
+
+    public Integer getDeuda(){return deuda;}
     
 }
 

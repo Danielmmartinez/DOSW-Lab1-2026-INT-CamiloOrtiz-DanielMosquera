@@ -1,3 +1,4 @@
+import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.Map;
 import java.util.Scanner;
@@ -10,8 +11,19 @@ public class Reto4 {
 	}
 	
 	private static Map<String, Integer> almacenarEnHashMap() {
-		// TODO Auto-generated method stub
-		return null;
+		Map<String , Integer> hashMap = new HashMap<>();
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("Ingrese la cantidad de datos a almacenar en el HashMap: ");
+		int cantidad = scanner.nextInt();
+		for (int i = 0; i < cantidad; i++) {
+			System.out.print("\nClave: ");
+			String clave = scanner.next();
+
+			System.out.print("Valor: ");
+			int valor = scanner.nextInt();
+			hashMap.putIfAbsent(clave, valor);
+		}
+		return hashMap;
 	}
 
 	private static Map<String, Integer> almacenarEnHashtable() {

@@ -1,3 +1,4 @@
+import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
 import java.util.TreeSet;
@@ -12,8 +13,23 @@ public class Reto5 {
 	}
 	
 	private static Set<Integer> almacenarEnHashSet() {
-		// TODO Auto-generated method stub
-		return null;
+
+		Set<Integer> hashSet = new HashSet<>();
+		Scanner scanner = new Scanner(System.in);
+
+		System.out.print("Ingrese la cantidad de datos a almacenar en el HashSet: ");
+		int cantidad = scanner.nextInt();
+
+		for (int i = 0; i < cantidad; i++) {
+
+			System.out.print("Valor: ");
+			Integer valor = scanner.nextInt();
+			hashSet.add(valor);
+		}
+
+		return hashSet.stream()
+				.filter(numero -> numero % 3 != 0)
+				.collect(Collectors.toSet());
 	}
 
 	private static Set<Integer> almacenarEnTreeSet() {

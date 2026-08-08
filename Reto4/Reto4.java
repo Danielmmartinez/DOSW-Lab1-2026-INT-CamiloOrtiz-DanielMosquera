@@ -1,13 +1,16 @@
-import java.util.HashMap;
-import java.util.Hashtable;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Reto4 {
 	
 	public static void main(String[] args) {
-		almacenarEnHashtable();
-		almacenarEnHashMap();
+
+
+		Map<String , Integer> hashMap = almacenarEnHashMap();
+		Map<String , Integer> hashTable = almacenarEnHashtable();
+
+		combinarMaps(hashMap, hashTable);
+
 	}
 	
 	private static Map<String, Integer> almacenarEnHashMap() {
@@ -23,6 +26,7 @@ public class Reto4 {
 			int valor = scanner.nextInt();
 			hashMap.putIfAbsent(clave, valor);
 		}
+		System.out.println(hashMap.toString());
 		return hashMap;
 	}
 
@@ -45,5 +49,24 @@ public class Reto4 {
 
 		System.out.println(hashtable.toString());
 		return hashtable;
+	}
+
+	private static void combinarMaps(
+			Map<String , Integer> hashMap,
+			Map<String , Integer> hashTable){
+		Map<String, Integer> combinado = new HashMap<>(hashMap);
+		combinado.putAll(hashTable);
+
+		Map<String , Integer> resultado = combinado.entrySet()
+				.stream()
+				.sorted(Map.Entry.comparingByKey())
+				.collect(Collectors.toMap(
+						entry -> entry.getKey().toUpperCase(),
+						entry -> entry.getValue(),
+						(v1, v2) -> v2,
+						() -> new LinkedHashMap<>()
+				));
+		resultado.forEach((clave, valor) ->
+				System.out.println("Clave: " + clave + " | Valor: " + valor));
 	}
 }

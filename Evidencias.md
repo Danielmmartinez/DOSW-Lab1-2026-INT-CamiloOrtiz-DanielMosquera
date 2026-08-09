@@ -35,10 +35,10 @@
 ### Funcionamiento
 ![FuncionaReto6](EvidenciaReto6.png)
 ### Codigo
-![CodeReto6](EvidenciaReto6Code1.png)
+![CodeReto6](EvidenciaReto6code1.png)
 
 ## Reto 7
 ### Funcionamiento
 ![FuncionaReto7](EvidenciaReto7.png)
 ### Codigo
-![CodeReto7](EvidenciaReto7Code1.png)
+![CodeReto7](EvidenciaReto7code1.png)

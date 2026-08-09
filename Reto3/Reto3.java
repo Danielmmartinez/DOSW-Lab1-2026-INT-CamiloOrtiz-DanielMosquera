@@ -1,4 +1,3 @@
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Scanner;
 
@@ -6,7 +5,7 @@ public class Reto3 {
 	
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("Mensaje interceptado: ");
+		System.out.print("Mensaje interceptado: ");
 		String mensaje = amplificador(scanner);
 		descifrar(mensaje);
 

@@ -66,8 +66,6 @@ public class Reto7 {
                 sobrevivientes2,
                 sobrevivientes3);
 
-        System.out.println("\n=== RESULTADO FINAL ===");
-
         if (sobrevivientes3.size() == 1) {
 
             Jugador ganador = sobrevivientes3.get(0);
@@ -123,7 +121,7 @@ public class Reto7 {
 
     private static List<Jugador> primeraPrueba(List<Jugador> jugadores) {
 
-        System.out.println("Prueba 1 - Luz Roja Luz Verde:");
+        System.out.println("\nPrueba 1 - Luz Roja Luz Verde:");
 
         List<Jugador> jugadoresActualizados = jugadores.stream()
                 .map(jugador -> {
@@ -144,7 +142,7 @@ public class Reto7 {
     }
 
     private static List<Jugador> segundaPrueba(List<Jugador> jugadores) {
-        System.out.println("Prueba 2 - Los Dados:");
+        System.out.println("\nPrueba 2 - Los Dados:");
 
         List<Jugador> jugadoresActualizados = jugadores.stream()
             .map(jugador -> {
@@ -160,7 +158,7 @@ public class Reto7 {
     }
     private static List<Jugador> terceraPrueba(List<Jugador> jugadores) {
 
-        System.out.println("Prueba 3 - Puente de Cristal:");
+        System.out.println("\nPrueba 3 - Puente de Cristal:");
 
         List<Jugador> jugadoresActualizados = jugadores.stream()
                 .map(jugador -> {

@@ -8,19 +8,19 @@ public class Reto2 {
 
 		Scanner scanner = new Scanner(System.in);
 
-		System.out.println("Lista 1:");
+		System.out.print("Lista 1: ");
 		List<Integer> listaProcesada = leerDatos(scanner);
 
-		System.out.println("Lista 2:");
+		System.out.print("Lista 2: ");
 		List<Integer> listaProcesada2 = leerDatos(scanner);
 
 		Resultado resultado1 = procesarLista(listaProcesada);
 		Resultado resultado2 = procesarLista(listaProcesada2);
 
-		System.out.println("Lista 1 =>");
+		System.out.print("\nLista 1 => ");
 		System.out.println(resultado1);
 
-		System.out.println("Lista 1 =>");
+		System.out.print("\nLista 2 => ");
 		System.out.println(resultado2);
 	}
 

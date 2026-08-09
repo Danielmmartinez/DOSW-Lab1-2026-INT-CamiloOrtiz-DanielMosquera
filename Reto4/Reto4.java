@@ -5,7 +5,6 @@ public class Reto4 {
 	
 	public static void main(String[] args) {
 
-
 		Map<String , Integer> hashMap = almacenarEnHashMap();
 		Map<String , Integer> hashTable = almacenarEnHashtable();
 
